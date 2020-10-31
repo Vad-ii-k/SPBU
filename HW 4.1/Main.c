@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <stdbool.h>
 #include <assert.h>
+#include <stdbool.h>
 
 #define SIZE (sizeof(int) * 8)
 
