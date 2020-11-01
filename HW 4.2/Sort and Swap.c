@@ -5,26 +5,26 @@ void swapElements(int* x, int* y)
 	*y = tmp;
 }
 
-void quickSort(int* mas, int size)
+void quickSort(int* array, const int size)
 {
 	int i = 0;
 	int j = size - 1;
-	int mid = mas[size / 2];
+	const int mid = array[size / 2];
 
 	do
 	{
-		while (mas[i] < mid)
+		while (array[i] < mid)
 		{
 			i++;
 		}
-		while (mas[j] > mid)
+		while (array[j] > mid)
 		{
 			j--;
 		}
 
 		if (i <= j)
 		{
-			swapElements(&mas[i], &mas[j]);
+			swapElements(array + i, array + j);
 			i++;
 			j--;
 		}
@@ -32,10 +32,10 @@ void quickSort(int* mas, int size)
 
 	if (j > 0)
 	{
-		quickSort(mas, j + 1);
+		quickSort(array, j + 1);
 	}
 	if (i < size)
 	{
-		quickSort(&mas[i], size - i);
+		quickSort(array + i, size - i);
 	}
 }
