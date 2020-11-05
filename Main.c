@@ -9,9 +9,15 @@ void testing()
 	assert(correctnessOfParenthesis(testStack, "{}[]()"));
 	assert(isEmpty(testStack));
 	assert(!correctnessOfParenthesis(testStack, "([)]{}"));
+	deleteStack(testStack);
 	assert(correctnessOfParenthesis(testStack, "[({})]"));
+	assert(isEmpty(testStack));
 	assert(!correctnessOfParenthesis(testStack, "[(}]"));
+	deleteStack(testStack);
 	assert(!correctnessOfParenthesis(testStack, "[[))"));
+	deleteStack(testStack);
+	assert(!correctnessOfParenthesis(testStack, "]["));
+	deleteStack(testStack);
 }
 
 int main()
