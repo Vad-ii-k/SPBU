@@ -3,9 +3,9 @@
 #include <stdbool.h>
 #include <assert.h>
 
-void qsortFunction(int* mas, int size);
+void qsortFunction(int* array, const int size);
 
-bool binarySearch(int a, int *mas, int n);
+bool binarySearch(int a, int *array, const int size);
 
 void randArray(int* array, const int size);
 
@@ -26,16 +26,18 @@ int main()
 	int sizeOfArray = 0; 
 	int countOfNumbers = 0;
 	scanf_s("%d%d", &sizeOfArray, &countOfNumbers);
-	int* inputArray;
-	inputArray = (int*)malloc(sizeOfArray*(sizeof(int)));
+	int* inputArray = malloc(sizeOfArray * sizeof(int));
 	if (NULL == inputArray)
 	{
 		printf("OS didn't gave memory. Exit...\n");
-		exit(1);
+		return 1;
 	}
 
 	randArray(inputArray, sizeOfArray);
+	printf("Generated array: ");
+	printArray(inputArray, sizeOfArray);
 	qsortFunction(inputArray, sizeOfArray);
+	printf("Sorted array:    ");
 	printArray(inputArray, sizeOfArray);
 
 	search(inputArray, sizeOfArray, countOfNumbers);
@@ -46,19 +48,15 @@ int main()
 
 void randArray(int* array, const int size)
 {
-	printf("Generated array: ");
 	srand(32);
 	for (int i = 0; i < size; i++)
 	{
 		array[i] = rand() % 100;
-		printf("%2d ", array[i]);
 	}
-	printf("\n");
 }
 
 void printArray(int* array, const int size)
 {
-	printf("Sorted array:    ");
 	for (int i = 0; i < size; i++)
 	{
 		printf("%2d ", array[i]);
@@ -72,8 +70,7 @@ bool binarySearch(int y, int* array, const int size)
 	int right = size - 1;
 	while (left <= right)
 	{
-		int middle;
-		middle = (left + right) / 2;
+		int middle = (left + right) / 2;
 		if (y < array[middle])
 		{
 			right = middle - 1;
@@ -90,26 +87,26 @@ bool binarySearch(int y, int* array, const int size)
 	return false;
 }
 
-void qsortFunction(int* mas, const int size)
+void qsortFunction(int* array, const int size)
 {
 	int i = 0;
 	int j = size - 1;
-	const int mid = mas[size / 2];
+	const int mid = array[size / 2];
 
 	do
 	{
-		while (mas[i] < mid)
+		while (array[i] < mid)
 		{
 			i++;
 		}
-		while (mas[j] > mid)
+		while (array[j] > mid)
 		{
 			j--;
 		}
 
 		if (i <= j)
 		{
-			swap(mas + i, mas + j);
+			swap(array + i, array + j);
 			i++;
 			j--;
 		}
@@ -117,11 +114,11 @@ void qsortFunction(int* mas, const int size)
 
 	if (j > 0)
 	{
-		qsortFunction(mas, j + 1);
+		qsortFunction(array, j + 1);
 	}
 	if (i < size)
 	{
-		qsortFunction(mas + i, size - i);
+		qsortFunction(array + i, size - i);
 	}
 }
 
