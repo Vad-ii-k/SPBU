@@ -13,7 +13,7 @@ bool* sumOfBinaryArrays(bool* binA, bool* binB);
 
 void printBin(bool* bin);
 
-void testSumBinary();
+void testSumBinary(int a, int b);
 
 int main()
 {
@@ -23,13 +23,12 @@ int main()
 
     const int a = 17;
     const int b = -127;
-    
+
     bool* binArrayA = convertToBinary(a);
     bool* binArrayB = convertToBinary(b);
     bool* binArrayResult = sumOfBinaryArrays(binArrayA, binArrayB);
 
-    int result = 0;
-    result = convertToDecimal(binArrayResult);
+    int result = convertToDecimal(binArrayResult);
 
     printf("%10d ", a);
     printBin(binArrayA);
