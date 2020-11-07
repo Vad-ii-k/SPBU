@@ -140,7 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Main.c" />
-    <ClCompile Include="Sort and Swap.c" />
+    <ClCompile Include="Sort.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sort.h" />

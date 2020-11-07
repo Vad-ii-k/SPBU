@@ -27,7 +27,7 @@ void readingFile(FILE* file, int* arrayNums, const int arraySize)
 	int i = 0;
 	while (!feof(file))
 	{
-		int num;
+		int num = 0;
 		const int readBytes = fscanf(file, "%d", &num);
 		if (readBytes < 0)
 		{
@@ -80,6 +80,7 @@ int numberOfRepetitions(const int maxValue, int* arrayNums, const int arraySize)
 			}
 		}
 	}
+	return 0;
 }
 
 void test()
@@ -106,14 +107,14 @@ int main()
 	if (arraySize <= 0)
 	{
 		printf("File is empty!");
-		exit(1);
+		return 1;
 	}
 
-	int* arrayNums = (int*)malloc(sizeof(int) * arraySize);
+	int* arrayNums = malloc(arraySize * sizeof(int));
 	if (NULL == arrayNums)
 	{
 		printf("OS didn't gave memory. Exit...\n");
-		exit(1);
+		return 1;
 	}
 
 	readingFile(file, arrayNums, arraySize);
