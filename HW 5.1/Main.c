@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include "Stack.h"
+#include "..\Stack\Stack.h"
 #include "Processings.h"
 
 void testingOfProcessings();
