@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Stack\Stack.c" />
     <ClCompile Include="Main.c" />
     <ClCompile Include="Processings.c" />
-    <ClCompile Include="Stack.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Stack\Stack.h" />
     <ClInclude Include="Processings.h" />
-    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
