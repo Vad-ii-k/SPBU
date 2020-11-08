@@ -50,8 +50,7 @@ int top(Stack* myStack)
 	{
 		return -1;
 	}
-	int item = myStack->head->value;
-	return item;
+	return myStack->head->value;
 }
 
 void deleteStack(Stack** myStack)
