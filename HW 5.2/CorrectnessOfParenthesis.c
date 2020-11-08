@@ -1,7 +1,12 @@
-#include "correctnessOfParenthesis.h"
+#include "CorrectnessOfParenthesis.h"
+#include "Stack.h"
+#include <iso646.h>
+#include <string.h>
+#include <stdlib.h>
 
-bool correctnessOfParenthesis(Stack* myStack, char* parenthesisExpression)
+bool correctnessOfParenthesis(char* parenthesisExpression)
 {
+	Stack* myStack = createStack();
 	int i = 0;
 	while (parenthesisExpression[i] != '\0')
 	{
@@ -15,10 +20,20 @@ bool correctnessOfParenthesis(Stack* myStack, char* parenthesisExpression)
 			char right = parenthesisExpression[i];
 			if (!(left == '(' and right == ')' or left == '{' and right == '}' or left == '[' and right == ']'))
 			{
+				deleteStack(myStack);
 				return false;
 			}
 		}
 		i++;
 	}
-	return true;
+	if (isEmpty(myStack))
+	{
+		deleteStack(myStack);
+		return true;
+	}
+	else
+	{
+		deleteStack(myStack);
+		return false;
+	}
 }

@@ -5,29 +5,21 @@
 
 void testing()
 {
-	Stack* testStack = createStack();
-	assert(correctnessOfParenthesis(testStack, "{}[]()"));
-	assert(isEmpty(testStack));
-	assert(!correctnessOfParenthesis(testStack, "([)]{}"));
-	deleteStack(testStack);
-	assert(correctnessOfParenthesis(testStack, "[({})]"));
-	assert(isEmpty(testStack));
-	assert(!correctnessOfParenthesis(testStack, "[(}]"));
-	deleteStack(testStack);
-	assert(!correctnessOfParenthesis(testStack, "[[))"));
-	deleteStack(testStack);
-	assert(!correctnessOfParenthesis(testStack, "]["));
-	deleteStack(testStack);
+	assert(correctnessOfParenthesis("{}[]()"));
+	assert(!correctnessOfParenthesis("([)]{}"));
+	assert(correctnessOfParenthesis("[({})]"));
+	assert(!correctnessOfParenthesis("[(}]"));
+	assert(!correctnessOfParenthesis("[[))"));
+	assert(!correctnessOfParenthesis("]["));
 }
 
 int main()
 {
 	testing();
-	Stack* myStack = createStack();
 	printf("Enter the expression from the parentheses: ");
 	char parenthesisExpression[100];
 	gets_s(parenthesisExpression, 99);
-	if (correctnessOfParenthesis(myStack, parenthesisExpression) and isEmpty(myStack))
+	if (correctnessOfParenthesis(parenthesisExpression))
 	{
 		printf("Correct\n");
 	}
