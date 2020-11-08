@@ -18,18 +18,18 @@
     <ClCompile Include="Main.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="Stack.c">
+    <ClCompile Include="CorrectnessOfParenthesis.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="CorrectnessOfParenthesis.c">
+    <ClCompile Include="..\Stack\Stack.c">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Stack.h">
+    <ClInclude Include="CorrectnessOfParenthesis.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="CorrectnessOfParenthesis.h">
+    <ClInclude Include="..\Stack\Stack.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

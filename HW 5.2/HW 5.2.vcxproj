@@ -139,13 +139,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\Stack\Stack.c" />
     <ClCompile Include="CorrectnessOfParenthesis.c" />
     <ClCompile Include="Main.c" />
-    <ClCompile Include="Stack.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Stack\Stack.h" />
     <ClInclude Include="CorrectnessOfParenthesis.h" />
-    <ClInclude Include="Stack.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

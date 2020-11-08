@@ -1,4 +1,4 @@
-#include "Stack.h"
+#include "../Stack/Stack.h"
 #include "CorrectnessOfParenthesis.h"
 #include <assert.h>
 #include <stdio.h>
@@ -11,6 +11,7 @@ void testing()
 	assert(!correctnessOfParenthesis("[(}]"));
 	assert(!correctnessOfParenthesis("[[))"));
 	assert(!correctnessOfParenthesis("]["));
+	assert(!correctnessOfParenthesis("abc"));
 }
 
 int main()
