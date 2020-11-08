@@ -1,10 +1,5 @@
 #pragma once
 #include "Stack.h"
-#include <string.h>
-#include <ctype.h>
 
-void operationsProcessing(Stack* myStack, char operation);
-
-void numbersProcessing(Stack* myStack, char* mathExpression, int* i);
-
+// Processing an expression entered by the user
 void expressionProcessing(Stack* myStack, char* mathExpression);

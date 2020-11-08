@@ -13,7 +13,23 @@ int main()
 	char mathExpression[100];
 	gets_s(mathExpression, 99);
 	expressionProcessing(myStack, mathExpression);
-	printf("%d\n", pop(myStack));
+	if (!isEmpty(myStack))
+	{
+		const int answer = pop(myStack);
+		if (!isEmpty(myStack))
+		{
+			printf("The expression is incorrect\n");
+		}
+		else 
+		{
+			printf("%d\n", answer);
+		}
+	}
+	else if (isEmpty(myStack))
+	{
+		printf("The expression is incorrect\n");
+	}
+	deleteStack(myStack);
 }
 
 void testingOfProcessings()
