@@ -141,9 +141,11 @@
   <ItemGroup>
     <ClCompile Include="..\Stack\Stack.c" />
     <ClCompile Include="Main.c" />
+    <ClCompile Include="Processings.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Stack\Stack.h" />
+    <ClInclude Include="Processings.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
