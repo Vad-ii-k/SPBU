@@ -20,6 +20,8 @@ int main()
 
 void tests()
 {
+	assert(!strcmp(shuntingYardAlgorithm("(20 - 10)"), "20 10 - "));
+	assert(!strcmp(shuntingYardAlgorithm("4 + 8 * 5"), "4 8 5 * + "));
 	assert(postfixExpressionProcessing(shuntingYardAlgorithm("(1+2)")) == 3);
 	assert(postfixExpressionProcessing(shuntingYardAlgorithm("1 + 2 * 3")) == 7);
 	assert(postfixExpressionProcessing(shuntingYardAlgorithm("(1 + 2) * 3 - 4")) == 5);
