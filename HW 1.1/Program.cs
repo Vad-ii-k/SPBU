@@ -18,7 +18,7 @@ namespace HW_1._1
 
         static void Main(string[] args)
         {
-            Console.WriteLine($"Enter sortArray elements:");
+            Console.WriteLine($"Enter array elements:");
             string[] nums = Console.ReadLine().Split(' ');
             int[] array = new int[nums.Length];
             for (int i = 0; i < nums.Length; i++)
@@ -27,10 +27,10 @@ namespace HW_1._1
             }
 
             BubbleSort(array);
-            Console.WriteLine("Sorted sortArray:");
+            Console.WriteLine("Sorted array:");
             foreach (int value in array)
             {
-                Console.Write($"{value} ");
+                Console.Write(value + " ");
             }
         }
     }
