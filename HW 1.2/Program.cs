@@ -13,8 +13,20 @@ namespace HW_1._2
             Console.WriteLine("Enter a string:");
             string input = Console.ReadLine();
             string output = BWT(input);
-            Console.WriteLine("\n" + output);
-            Console.WriteLine("\n" + InverseBWT(output));
+            Console.WriteLine("\n   BWT string: " + output);
+            string recovery = InverseBWT(output);
+            Console.WriteLine("\nSource string: " + recovery);
+            for (int i = 0; i < input.Length; i++)
+            {
+                if (input[i] != recovery[i])
+                {
+                    Console.WriteLine("\nThe string was not recovered(((");
+                }
+                if (i == input.Length - 1)
+                {
+                    Console.WriteLine("\nThe string was recovered)))");
+                }
+            }
         }
 
         static void Test()
